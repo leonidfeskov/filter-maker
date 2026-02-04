@@ -246,6 +246,25 @@
             checkbox.checked = false;
         });
 
+        // Обновляем placeholder'ы в выпадающих списках
+        const dropdowns = document.querySelectorAll('.checkbox-dropdown');
+        dropdowns.forEach(dropdown => {
+            const placeholder = dropdown.querySelector('.checkbox-dropdown-placeholder');
+            // Восстанавливаем дефолтный текст placeholder'а
+            const defaultTexts = {
+                'Тип задач': 'Выберите типы задач',
+                'Команда': 'Выберите команды',
+                'Статус задачи': 'Выберите статусы',
+                'Тип задачи': 'Выберите типы',
+                'Наличие Story внутри': 'Выберите опции',
+                'Продукт/налог': 'Выберите категорию',
+                'Исключить по лейблу': 'Выберите лейблы'
+            };
+
+            const filterLabel = dropdown.closest('.filter-group').querySelector('.filter-label').textContent;
+            placeholder.textContent = defaultTexts[filterLabel] || 'Выберите значения';
+        });
+
         // Очищаем localStorage
         localStorage.removeItem('filterSettings');
 
