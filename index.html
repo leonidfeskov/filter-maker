@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конструктор фильтров</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Конструктор фильтров</h1>
+
+        <!-- Ссылка на отчет -->
+        <div class="filter-group">
+            <label class="filter-label" for="url">Ссылка на отчет</label>
+            <input type="text" id="url" name="url" placeholder="https://hh.ru/">
+        </div>
+
+        <!-- Дата решения задачи (начало) -->
+        <div class="filter-group">
+            <label class="filter-label" for="date-start">Дата решения задачи</label>
+            <input type="date" id="date-start" name="Дата решения задачи_s">
+        </div>
+
+        <!-- Дата решения задачи (конец) -->
+        <div class="filter-group">
+            <label class="filter-label" for="date-end">Дата решения задачи</label>
+            <input type="date" id="date-end" name="Дата решения задачи_e">
+        </div>
+
+        <!-- Гранулярность даты -->
+        <div class="filter-group">
+            <span class="filter-label">Гранулярность даты</span>
+            <div class="radio-group">
+                <div class="radio-item">
+                    <input type="radio" id="granularity-quarter" name="Гранулярность даты" value="Квартал">
+                    <label for="granularity-quarter">Квартал</label>
+                </div>
+                <div class="radio-item">
+                    <input type="radio" id="granularity-month" name="Гранулярность даты" value="Месяц">
+                    <label for="granularity-month">Месяц</label>
+                </div>
+                <div class="radio-item">
+                    <input type="radio" id="granularity-week" name="Гранулярность даты" value="Неделя">
+                    <label for="granularity-week">Неделя</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Тип задач -->
+        <div class="filter-group">
+            <span class="filter-label">Тип задач</span>
+            <div class="checkbox-group">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="task-at" name="Тип задач" value="Autotesting Task">
+                    <label for="task-at">Autotesting Task</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="task-production-bug" name="Тип задач" value="Production Bug">
+                    <label for="task-production-bug">Production Bug</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="task-task" name="Тип задач" value="Task">
+                    <label for="task-task">Task</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Команда -->
+        <div class="filter-group">
+            <span class="filter-label">Команда</span>
+            <div class="checkbox-group">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="team-superproducts" name="Команда" value="суперпродукты">
+                    <label for="team-superproducts">суперпродукты</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="team-webservices" name="Команда" value="webservices">
+                    <label for="team-webservices">webservices</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="team-bonjour" name="Команда" value="bonjour">
+                    <label for="team-bonjour">bonjour</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="team-hrmobile" name="Команда" value="hr-mobile">
+                    <label for="team-hrmobile">hr-mobile</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Статус задачи -->
+        <div class="filter-group">
+            <span class="filter-label">Статус задачи</span>
+            <div class="checkbox-group">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="status-1" name="Статус задачи" value="Problem Discovery: Done">
+                    <label for="status-1">Problem Discovery: Done</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="status-2" name="Статус задачи" value="Problem Discovery: In progress">
+                    <label for="status-2">Problem Discovery: In progress</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="status-3" name="Статус задачи" value="Solution Discovery: In progress">
+                    <label for="status-3">Solution Discovery: In progress</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="status-4" name="Статус задачи" value="Solution Discovery: Done">
+                    <label for="status-4">Solution Discovery: Done</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="status-5" name="Статус задачи" value="Decomposition: In progress">
+                    <label for="status-5">Decomposition: In progress</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="status-6" name="Статус задачи" value="Decomposition: Done">
+                    <label for="status-6">Decomposition: Done</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="status-7" name="Статус задачи" value="Development: In progress">
+                    <label for="status-7">Development: In progress</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="status-8" name="Статус задачи" value="Development: Done">
+                    <label for="status-8">Development: Done</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="status-9" name="Статус задачи" value="Ab-test: Accumulation of data">
+                    <label for="status-9">Ab-test: Accumulation of data</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="status-10" name="Статус задачи" value="Ab-test: Done">
+                    <label for="status-10">Ab-test: Done</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="status-11" name="Статус задачи" value="Ab-test: Summing results">
+                    <label for="status-11">Ab-test: Summing results</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="status-12" name="Статус задачи" value="PostProduction: In Progress">
+                    <label for="status-12">PostProduction: In Progress</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Тип задачи -->
+        <div class="filter-group">
+            <span class="filter-label">Тип задачи</span>
+            <div class="checkbox-group">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="type-feature" name="Тип задачи" value="Feature">
+                    <label for="type-feature">Feature</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="type-project" name="Тип задачи" value="Project">
+                    <label for="type-project">Project</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="type-story" name="Тип задачи" value="Story">
+                    <label for="type-story">Story</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="type-initiative" name="Тип задачи" value="Инициатива">
+                    <label for="type-initiative">Инициатива</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Наличие Story внутри -->
+        <div class="filter-group">
+            <span class="filter-label">Тип задачи</span>
+            <div class="checkbox-group">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="has-story" name="Наличие Story внутри" value="без Story">
+                    <label for="has-story">без Story</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Учет времени блокировок -->
+        <div class="filter-group">
+            <span class="filter-label">Учет времени блокировок</span>
+            <div class="radio-group">
+                <div class="radio-item">
+                    <input type="radio" id="with-blockers" name="Учет времени блокировок" value="Общее время">
+                    <label for="with-blockers">Общее время</label>
+                </div>
+                <div class="radio-item">
+                    <input type="radio" id="without-blockers" name="Учет времени блокировок" value="Время с вычетом блокировок">
+                    <label for="without-blockers">Время с вычетом блокировок</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Продукт/налог -->
+        <div class="filter-group">
+            <span class="filter-label">Продукт/налог</span>
+            <div class="checkbox-group">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="tax" name="Продукт/налог" value="Налог">
+                    <label for="tax">Налог</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="product" name="Продукт/налог" value="Продукт">
+                    <label for="product">Продукт</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Исключить по лейблу -->
+        <div class="filter-group">
+            <span class="filter-label">Исключить по лейблу</span>
+            <div class="checkbox-group">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="label-nostat" name="Исключить по лейблу" value="nostat">
+                    <label for="label-nostat">nostat</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Кнопки управления -->
+        <div class="button-group">
+            <button class="copy-button" id="open-report">Открыть отчет</button>
+            <button class="copy-button" id="copy-button">Скопировать ссылку</button>
+            <button class="clear-button" id="clear-button">Очистить форму</button>
+        </div>
+    </div>
+
+    <!-- Уведомление о копировании -->
+    <div class="copy-notification" id="copy-notification">Скопировано!</div>
+
+    <script src="main.js"></script>
+</body>
+</html>
