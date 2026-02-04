@@ -50,18 +50,24 @@
         <!-- Тип задач -->
         <div class="filter-group">
             <span class="filter-label">Тип задач</span>
-            <div class="checkbox-group">
-                <div class="checkbox-item">
-                    <input type="checkbox" id="task-at" name="Тип задач" value="Autotesting Task">
-                    <label for="task-at">Autotesting Task</label>
+            <div class="checkbox-dropdown">
+                <div class="checkbox-dropdown-header">
+                    <span class="checkbox-dropdown-placeholder">Выберите типы задач</span>
+                    <span class="checkbox-dropdown-arrow">▼</span>
                 </div>
-                <div class="checkbox-item">
-                    <input type="checkbox" id="task-production-bug" name="Тип задач" value="Production Bug">
-                    <label for="task-production-bug">Production Bug</label>
-                </div>
-                <div class="checkbox-item">
-                    <input type="checkbox" id="task-task" name="Тип задач" value="Task">
-                    <label for="task-task">Task</label>
+                <div class="checkbox-dropdown-list">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="task-at" name="Тип задач" value="Autotesting Task">
+                        <label for="task-at">Autotesting Task</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="task-production-bug" name="Тип задач" value="Production Bug">
+                        <label for="task-production-bug">Production Bug</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="task-task" name="Тип задач" value="Task">
+                        <label for="task-task">Task</label>
+                    </div>
                 </div>
             </div>
         </div>
@@ -69,22 +75,328 @@
         <!-- Команда -->
         <div class="filter-group">
             <span class="filter-label">Команда</span>
-            <div class="checkbox-group">
-                <div class="checkbox-item">
-                    <input type="checkbox" id="team-superproducts" name="Команда" value="суперпродукты">
-                    <label for="team-superproducts">суперпродукты</label>
+            <div class="checkbox-dropdown">
+                <div class="checkbox-dropdown-header">
+                    <span class="checkbox-dropdown-placeholder">Выберите команды</span>
+                    <span class="checkbox-dropdown-arrow">▼</span>
                 </div>
-                <div class="checkbox-item">
-                    <input type="checkbox" id="team-webservices" name="Команда" value="webservices">
-                    <label for="team-webservices">webservices</label>
-                </div>
-                <div class="checkbox-item">
-                    <input type="checkbox" id="team-bonjour" name="Команда" value="bonjour">
-                    <label for="team-bonjour">bonjour</label>
-                </div>
-                <div class="checkbox-item">
-                    <input type="checkbox" id="team-hrmobile" name="Команда" value="hr-mobile">
-                    <label for="team-hrmobile">hr-mobile</label>
+                <div class="checkbox-dropdown-list">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-ashot" name="Команда" value="a-shot">
+                        <label for="team-ashot">a-shot</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-ateam" name="Команда" value="a-team">
+                        <label for="team-ateam">a-team</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-abt" name="Команда" value="abt">
+                        <label for="team-abt">abt</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-addy" name="Команда" value="addy">
+                        <label for="team-addy">addy</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-adrequest" name="Команда" value="adrequest">
+                        <label for="team-adrequest">adrequest</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-adventure" name="Команда" value="adventure">
+                        <label for="team-adventure">adventure</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-adwizards" name="Команда" value="adwizards">
+                        <label for="team-adwizards">adwizards</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-ailab" name="Команда" value="ailab">
+                        <label for="team-ailab">ailab</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-ampire" name="Команда" value="ampire">
+                        <label for="team-ampire">ampire</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-android" name="Команда" value="android-разработка">
+                        <label for="team-android">android-разработка</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-api" name="Команда" value="api">
+                        <label for="team-api">api</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-assessment" name="Команда" value="assessment">
+                        <label for="team-assessment">assessment</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-billing" name="Команда" value="billing">
+                        <label for="team-billing">billing</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-bonjour" name="Команда" value="bonjour">
+                        <label for="team-bonjour">bonjour</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-brandnew" name="Команда" value="brand-new">
+                        <label for="team-brandnew">brand-new</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-brandy" name="Команда" value="brandy">
+                        <label for="team-brandy">brandy</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-brandymobile" name="Команда" value="brandy-mobile">
+                        <label for="team-brandymobile">brandy-mobile</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-candydates" name="Команда" value="candydates">
+                        <label for="team-candydates">candydates</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-cashflow" name="Команда" value="cashflow">
+                        <label for="team-cashflow">cashflow</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-connect" name="Команда" value="connect">
+                        <label for="team-connect">connect</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-defense" name="Команда" value="defense">
+                        <label for="team-defense">defense</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-devsecops" name="Команда" value="devsecops">
+                        <label for="team-devsecops">devsecops</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-dreamhunters" name="Команда" value="dream hunters">
+                        <label for="team-dreamhunters">dream hunters</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-dsml" name="Команда" value="dsml-соискатели">
+                        <label for="team-dsml">dsml-соискатели</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-dwh" name="Команда" value="dwh">
+                        <label for="team-dwh">dwh</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-exp" name="Команда" value="exp">
+                        <label for="team-exp">exp</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-geo" name="Команда" value="geo">
+                        <label for="team-geo">geo</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-geomobile" name="Команда" value="geo-mobile">
+                        <label for="team-geomobile">geo-mobile</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-hrmobile" name="Команда" value="hr-mobile">
+                        <label for="team-hrmobile">hr-mobile</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-hrom" name="Команда" value="hr-om">
+                        <label for="team-hrom">hr-om</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-ios" name="Команда" value="ios-разработка">
+                        <label for="team-ios">ios-разработка</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-jager" name="Команда" value="jager">
+                        <label for="team-jager">jager</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-jobreviews" name="Команда" value="jobreviews">
+                        <label for="team-jobreviews">jobreviews</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-m1" name="Команда" value="m1">
+                        <label for="team-m1">m1</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-magrittomobile" name="Команда" value="magritto-mobile">
+                        <label for="team-magrittomobile">magritto-mobile</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-marketing" name="Команда" value="marketing">
+                        <label for="team-marketing">marketing</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-mercury" name="Команда" value="mercury">
+                        <label for="team-mercury">mercury</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-mlops" name="Команда" value="mlops">
+                        <label for="team-mlops">mlops</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-mobidick" name="Команда" value="mobi-dick">
+                        <label for="team-mobidick">mobi-dick</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-mobicraft" name="Команда" value="mobicraft">
+                        <label for="team-mobicraft">mobicraft</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-mobilehunters" name="Команда" value="mobile hunters">
+                        <label for="team-mobilehunters">mobile hunters</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-mobilecore" name="Команда" value="mobile-core">
+                        <label for="team-mobilecore">mobile-core</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-mobilesearch" name="Команда" value="mobile-search">
+                        <label for="team-mobilesearch">mobile-search</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-mobilex" name="Команда" value="mobile-x">
+                        <label for="team-mobilex">mobile-x</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-offer" name="Команда" value="offer">
+                        <label for="team-offer">offer</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-onlyfinds" name="Команда" value="onlyfinds">
+                        <label for="team-onlyfinds">onlyfinds</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-profit" name="Команда" value="profit">
+                        <label for="team-profit">profit</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-recapp" name="Команда" value="recapp">
+                        <label for="team-recapp">recapp</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-research" name="Команда" value="research">
+                        <label for="team-research">research</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-saveme" name="Команда" value="save me">
+                        <label for="team-saveme">save me</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-searchengine" name="Команда" value="searchengine">
+                        <label for="team-searchengine">searchengine</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-sense" name="Команда" value="sense">
+                        <label for="team-sense">sense</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-sensemobile" name="Команда" value="sense-mobile">
+                        <label for="team-sensemobile">sense-mobile</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-skillets" name="Команда" value="skillets">
+                        <label for="team-skillets">skillets</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-sputnik" name="Команда" value="sputnik">
+                        <label for="team-sputnik">sputnik</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-statcraft" name="Команда" value="statcraft">
+                        <label for="team-statcraft">statcraft</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-statwars" name="Команда" value="statwars">
+                        <label for="team-statwars">statwars</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-supermarket" name="Команда" value="supermarket">
+                        <label for="team-supermarket">supermarket</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-talantinos" name="Команда" value="talantinos">
+                        <label for="team-talantinos">talantinos</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-talantix" name="Команда" value="talantix">
+                        <label for="team-talantix">talantix</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-trustme" name="Команда" value="trust me">
+                        <label for="team-trustme">trust me</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-trustml" name="Команда" value="trustml">
+                        <label for="team-trustml">trustml</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-vacsearch" name="Команда" value="vacsearch">
+                        <label for="team-vacsearch">vacsearch</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-voice" name="Команда" value="voice">
+                        <label for="team-voice">voice</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-webservices" name="Команда" value="webservices">
+                        <label for="team-webservices">webservices</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-automation" name="Команда" value="автоматизация">
+                        <label for="team-automation">автоматизация</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-infrastructure" name="Команда" value="инфраструктура">
+                        <label for="team-infrastructure">инфраструктура</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-career" name="Команда" value="карьерная платформа">
+                        <label for="team-career">карьерная платформа</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-combine" name="Команда" value="комбайн">
+                        <label for="team-combine">комбайн</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-converters" name="Команда" value="конверсы">
+                        <label for="team-converters">конверсы</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-mobileproducts" name="Команда" value="мобильные продукты">
+                        <label for="team-mobileproducts">мобильные продукты</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-monetization" name="Команда" value="монетизация">
+                        <label for="team-monetization">монетизация</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-skills" name="Команда" value="навыки">
+                        <label for="team-skills">навыки</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-pandora" name="Команда" value="пандора">
+                        <label for="team-pandora">пандора</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-peppers" name="Команда" value="перцы">
+                        <label for="team-peppers">перцы</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-platform" name="Команда" value="платформа">
+                        <label for="team-platform">платформа</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-search3" name="Команда" value="поиск-3">
+                        <label for="team-search3">поиск-3</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-resumeai" name="Команда" value="резюмируй!">
+                        <label for="team-resumeai">резюмируй!</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="team-superproducts" name="Команда" value="суперпродукты">
+                        <label for="team-superproducts">суперпродукты</label>
+                    </div>
                 </div>
             </div>
         </div>
@@ -92,54 +404,60 @@
         <!-- Статус задачи -->
         <div class="filter-group">
             <span class="filter-label">Статус задачи</span>
-            <div class="checkbox-group">
-                <div class="checkbox-item">
-                    <input type="checkbox" id="status-1" name="Статус задачи" value="Problem Discovery: Done">
-                    <label for="status-1">Problem Discovery: Done</label>
+            <div class="checkbox-dropdown">
+                <div class="checkbox-dropdown-header">
+                    <span class="checkbox-dropdown-placeholder">Выберите статусы</span>
+                    <span class="checkbox-dropdown-arrow">▼</span>
                 </div>
-                <div class="checkbox-item">
-                    <input type="checkbox" id="status-2" name="Статус задачи" value="Problem Discovery: In progress">
-                    <label for="status-2">Problem Discovery: In progress</label>
-                </div>
-                <div class="checkbox-item">
-                    <input type="checkbox" id="status-3" name="Статус задачи" value="Solution Discovery: In progress">
-                    <label for="status-3">Solution Discovery: In progress</label>
-                </div>
-                <div class="checkbox-item">
-                    <input type="checkbox" id="status-4" name="Статус задачи" value="Solution Discovery: Done">
-                    <label for="status-4">Solution Discovery: Done</label>
-                </div>
-                <div class="checkbox-item">
-                    <input type="checkbox" id="status-5" name="Статус задачи" value="Decomposition: In progress">
-                    <label for="status-5">Decomposition: In progress</label>
-                </div>
-                <div class="checkbox-item">
-                    <input type="checkbox" id="status-6" name="Статус задачи" value="Decomposition: Done">
-                    <label for="status-6">Decomposition: Done</label>
-                </div>
-                <div class="checkbox-item">
-                    <input type="checkbox" id="status-7" name="Статус задачи" value="Development: In progress">
-                    <label for="status-7">Development: In progress</label>
-                </div>
-                <div class="checkbox-item">
-                    <input type="checkbox" id="status-8" name="Статус задачи" value="Development: Done">
-                    <label for="status-8">Development: Done</label>
-                </div>
-                <div class="checkbox-item">
-                    <input type="checkbox" id="status-9" name="Статус задачи" value="Ab-test: Accumulation of data">
-                    <label for="status-9">Ab-test: Accumulation of data</label>
-                </div>
-                <div class="checkbox-item">
-                    <input type="checkbox" id="status-10" name="Статус задачи" value="Ab-test: Done">
-                    <label for="status-10">Ab-test: Done</label>
-                </div>
-                <div class="checkbox-item">
-                    <input type="checkbox" id="status-11" name="Статус задачи" value="Ab-test: Summing results">
-                    <label for="status-11">Ab-test: Summing results</label>
-                </div>
-                <div class="checkbox-item">
-                    <input type="checkbox" id="status-12" name="Статус задачи" value="PostProduction: In Progress">
-                    <label for="status-12">PostProduction: In Progress</label>
+                <div class="checkbox-dropdown-list">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="status-1" name="Статус задачи" value="Problem Discovery: Done">
+                        <label for="status-1">Problem Discovery: Done</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="status-2" name="Статус задачи" value="Problem Discovery: In progress">
+                        <label for="status-2">Problem Discovery: In progress</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="status-3" name="Статус задачи" value="Solution Discovery: In progress">
+                        <label for="status-3">Solution Discovery: In progress</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="status-4" name="Статус задачи" value="Solution Discovery: Done">
+                        <label for="status-4">Solution Discovery: Done</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="status-5" name="Статус задачи" value="Decomposition: In progress">
+                        <label for="status-5">Decomposition: In progress</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="status-6" name="Статус задачи" value="Decomposition: Done">
+                        <label for="status-6">Decomposition: Done</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="status-7" name="Статус задачи" value="Development: In progress">
+                        <label for="status-7">Development: In progress</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="status-8" name="Статус задачи" value="Development: Done">
+                        <label for="status-8">Development: Done</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="status-9" name="Статус задачи" value="Ab-test: Accumulation of data">
+                        <label for="status-9">Ab-test: Accumulation of data</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="status-10" name="Статус задачи" value="Ab-test: Done">
+                        <label for="status-10">Ab-test: Done</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="status-11" name="Статус задачи" value="Ab-test: Summing results">
+                        <label for="status-11">Ab-test: Summing results</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="status-12" name="Статус задачи" value="PostProduction: In Progress">
+                        <label for="status-12">PostProduction: In Progress</label>
+                    </div>
                 </div>
             </div>
         </div>
@@ -147,33 +465,45 @@
         <!-- Тип задачи -->
         <div class="filter-group">
             <span class="filter-label">Тип задачи</span>
-            <div class="checkbox-group">
-                <div class="checkbox-item">
-                    <input type="checkbox" id="type-feature" name="Тип задачи" value="Feature">
-                    <label for="type-feature">Feature</label>
+            <div class="checkbox-dropdown">
+                <div class="checkbox-dropdown-header">
+                    <span class="checkbox-dropdown-placeholder">Выберите типы</span>
+                    <span class="checkbox-dropdown-arrow">▼</span>
                 </div>
-                <div class="checkbox-item">
-                    <input type="checkbox" id="type-project" name="Тип задачи" value="Project">
-                    <label for="type-project">Project</label>
-                </div>
-                <div class="checkbox-item">
-                    <input type="checkbox" id="type-story" name="Тип задачи" value="Story">
-                    <label for="type-story">Story</label>
-                </div>
-                <div class="checkbox-item">
-                    <input type="checkbox" id="type-initiative" name="Тип задачи" value="Инициатива">
-                    <label for="type-initiative">Инициатива</label>
+                <div class="checkbox-dropdown-list">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="type-feature" name="Тип задачи" value="Feature">
+                        <label for="type-feature">Feature</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="type-project" name="Тип задачи" value="Project">
+                        <label for="type-project">Project</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="type-story" name="Тип задачи" value="Story">
+                        <label for="type-story">Story</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="type-initiative" name="Тип задачи" value="Инициатива">
+                        <label for="type-initiative">Инициатива</label>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- Наличие Story внутри -->
         <div class="filter-group">
-            <span class="filter-label">Тип задачи</span>
-            <div class="checkbox-group">
-                <div class="checkbox-item">
-                    <input type="checkbox" id="has-story" name="Наличие Story внутри" value="без Story">
-                    <label for="has-story">без Story</label>
+            <span class="filter-label">Наличие Story внутри</span>
+            <div class="checkbox-dropdown">
+                <div class="checkbox-dropdown-header">
+                    <span class="checkbox-dropdown-placeholder">Выберите опции</span>
+                    <span class="checkbox-dropdown-arrow">▼</span>
+                </div>
+                <div class="checkbox-dropdown-list">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="has-story" name="Наличие Story внутри" value="без Story">
+                        <label for="has-story">без Story</label>
+                    </div>
                 </div>
             </div>
         </div>
@@ -196,14 +526,20 @@
         <!-- Продукт/налог -->
         <div class="filter-group">
             <span class="filter-label">Продукт/налог</span>
-            <div class="checkbox-group">
-                <div class="checkbox-item">
-                    <input type="checkbox" id="tax" name="Продукт/налог" value="Налог">
-                    <label for="tax">Налог</label>
+            <div class="checkbox-dropdown">
+                <div class="checkbox-dropdown-header">
+                    <span class="checkbox-dropdown-placeholder">Выберите категорию</span>
+                    <span class="checkbox-dropdown-arrow">▼</span>
                 </div>
-                <div class="checkbox-item">
-                    <input type="checkbox" id="product" name="Продукт/налог" value="Продукт">
-                    <label for="product">Продукт</label>
+                <div class="checkbox-dropdown-list">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="tax" name="Продукт/налог" value="Налог">
+                        <label for="tax">Налог</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="product" name="Продукт/налог" value="Продукт">
+                        <label for="product">Продукт</label>
+                    </div>
                 </div>
             </div>
         </div>
@@ -211,10 +547,16 @@
         <!-- Исключить по лейблу -->
         <div class="filter-group">
             <span class="filter-label">Исключить по лейблу</span>
-            <div class="checkbox-group">
-                <div class="checkbox-item">
-                    <input type="checkbox" id="label-nostat" name="Исключить по лейблу" value="nostat">
-                    <label for="label-nostat">nostat</label>
+            <div class="checkbox-dropdown">
+                <div class="checkbox-dropdown-header">
+                    <span class="checkbox-dropdown-placeholder">Выберите лейблы</span>
+                    <span class="checkbox-dropdown-arrow">▼</span>
+                </div>
+                <div class="checkbox-dropdown-list">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="label-nostat" name="Исключить по лейблу" value="nostat">
+                        <label for="label-nostat">nostat</label>
+                    </div>
                 </div>
             </div>
         </div>
@@ -222,7 +564,6 @@
         <!-- Кнопки управления -->
         <div class="button-group">
             <button class="copy-button" id="open-report">Открыть отчет</button>
-            <button class="copy-button" id="copy-button">Скопировать ссылку</button>
             <button class="clear-button" id="clear-button">Очистить форму</button>
         </div>
     </div>

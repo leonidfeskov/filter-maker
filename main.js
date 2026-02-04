@@ -6,7 +6,6 @@
     const radioButtons = document.querySelectorAll('input[type="radio"]');
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
     const openReportButton = document.getElementById('open-report');
-    const copyButton = document.getElementById('copy-button');
     const clearButton = document.getElementById('clear-button');
     const notification = document.getElementById('copy-notification');
 
@@ -227,48 +226,6 @@
     }
 
     /**
-     * Копирует URL с фильтрами или query string в буфер обмена
-     */
-    async function copyToClipboard() {
-        const queryString = buildQueryString();
-        let textToCopy;
-
-        // Если есть базовый URL, формируем полную ссылку
-        if (urlInput.value.trim()) {
-            textToCopy = buildFullUrl();
-        } else {
-            // Если нет базового URL, копируем только query string
-            if (!queryString) {
-                showNotification('Нет активных фильтров');
-                return;
-            }
-            textToCopy = queryString;
-        }
-
-        try {
-            await navigator.clipboard.writeText(textToCopy);
-            showNotification('Скопировано!');
-        } catch (err) {
-            // Fallback для старых браузеров
-            const textarea = document.createElement('textarea');
-            textarea.value = textToCopy;
-            textarea.style.position = 'fixed';
-            textarea.style.opacity = '0';
-            document.body.appendChild(textarea);
-            textarea.select();
-
-            try {
-                document.execCommand('copy');
-                showNotification('Скопировано!');
-            } catch (fallbackErr) {
-                showNotification('Ошибка копирования');
-            }
-
-            document.body.removeChild(textarea);
-        }
-    }
-
-    /**
      * Очищает все фильтры
      */
     function clearFilters() {
@@ -314,6 +271,7 @@
 
     // Добавляем обработчики событий на все элементы фильтров
     urlInput.addEventListener('input', saveToLocalStorage);
+    urlInput.addEventListener('change', saveToLocalStorage);
     dateStart.addEventListener('change', updateURL);
     dateEnd.addEventListener('change', updateURL);
 
@@ -327,14 +285,84 @@
 
     // Обработчики кнопок
     openReportButton.addEventListener('click', openReport);
-    copyButton.addEventListener('click', copyToClipboard);
     clearButton.addEventListener('click', clearFilters);
+
+    /**
+     * Инициализирует выпадающие списки чекбоксов
+     */
+    function initCheckboxDropdowns() {
+        const dropdowns = document.querySelectorAll('.checkbox-dropdown');
+
+        dropdowns.forEach(dropdown => {
+            const header = dropdown.querySelector('.checkbox-dropdown-header');
+            const placeholder = dropdown.querySelector('.checkbox-dropdown-placeholder');
+            const checkboxesInDropdown = dropdown.querySelectorAll('input[type="checkbox"]');
+            const defaultPlaceholder = placeholder.textContent;
+
+            // Функция обновления текста заголовка
+            function updatePlaceholder() {
+                const checked = Array.from(checkboxesInDropdown).filter(cb => cb.checked);
+
+                if (checked.length === 0) {
+                    placeholder.textContent = defaultPlaceholder;
+                } else {
+                    placeholder.textContent = checked.map(cb => cb.value).join(', ');
+                }
+            }
+
+            // Клик по заголовку - открыть/закрыть список
+            header.addEventListener('click', (e) => {
+                e.stopPropagation();
+
+                // Закрываем все другие выпадающие списки
+                dropdowns.forEach(otherDropdown => {
+                    if (otherDropdown !== dropdown) {
+                        otherDropdown.classList.remove('active');
+                    }
+                });
+
+                // Переключаем текущий список
+                dropdown.classList.toggle('active');
+            });
+
+            // Обновляем текст при изменении чекбоксов
+            checkboxesInDropdown.forEach(checkbox => {
+                checkbox.addEventListener('change', updatePlaceholder);
+            });
+
+            // Инициализируем текст при загрузке
+            updatePlaceholder();
+        });
+
+        // Закрываем выпадающие списки при клике вне их
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.checkbox-dropdown')) {
+                dropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+            }
+        });
+    }
 
     // Восстанавливаем фильтры при загрузке страницы
     // Приоритет: URL имеет приоритет над localStorage
     if (window.location.search) {
         // Если есть параметры в URL, восстанавливаем из URL
         restoreFiltersFromURL();
+
+        // Восстанавливаем поле URL из localStorage
+        const savedData = localStorage.getItem('filterSettings');
+        if (savedData) {
+            try {
+                const filterData = JSON.parse(savedData);
+                if (filterData.url) {
+                    urlInput.value = filterData.url;
+                }
+            } catch (e) {
+                console.error('Ошибка при восстановлении URL из localStorage:', e);
+            }
+        }
+
         // И сохраняем в localStorage для последующих загрузок
         saveToLocalStorage();
     } else {
@@ -346,4 +374,7 @@
             history.replaceState(null, '', `?${queryString}`);
         }
     }
+
+    // Инициализируем выпадающие списки
+    initCheckboxDropdowns();
 })();
