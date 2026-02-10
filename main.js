@@ -127,6 +127,16 @@
                         checkbox.checked = true;
                     }
                 });
+
+                // Обновляем состояние чекбоксов "Выбрать все"
+                const dropdowns = document.querySelectorAll('.checkbox-dropdown');
+                dropdowns.forEach(dropdown => {
+                    const selectAllCheckbox = dropdown.querySelector('.select-all-checkbox');
+                    const regularCheckboxes = dropdown.querySelectorAll('input[type="checkbox"]:not(.select-all-checkbox)');
+                    const checkedCount = Array.from(regularCheckboxes).filter(cb => cb.checked).length;
+                    selectAllCheckbox.checked = checkedCount === regularCheckboxes.length && regularCheckboxes.length > 0;
+                    selectAllCheckbox.indeterminate = checkedCount > 0 && checkedCount < regularCheckboxes.length;
+                });
             }
         } catch (e) {
             console.error('Ошибка при восстановлении фильтров из localStorage:', e);
@@ -180,6 +190,16 @@
                     checkbox.checked = true;
                 }
             }
+        });
+
+        // Обновляем состояние чекбоксов "Выбрать все" после восстановления
+        const dropdowns = document.querySelectorAll('.checkbox-dropdown');
+        dropdowns.forEach(dropdown => {
+            const selectAllCheckbox = dropdown.querySelector('.select-all-checkbox');
+            const regularCheckboxes = dropdown.querySelectorAll('input[type="checkbox"]:not(.select-all-checkbox)');
+            const checkedCount = Array.from(regularCheckboxes).filter(cb => cb.checked).length;
+            selectAllCheckbox.checked = checkedCount === regularCheckboxes.length && regularCheckboxes.length > 0;
+            selectAllCheckbox.indeterminate = checkedCount > 0 && checkedCount < regularCheckboxes.length;
         });
     }
 
@@ -244,6 +264,13 @@
         // Снимаем выбор со всех чекбоксов
         checkboxes.forEach(checkbox => {
             checkbox.checked = false;
+        });
+
+        // Сбрасываем все чекбоксы "Выбрать все"
+        const selectAllCheckboxes = document.querySelectorAll('.select-all-checkbox');
+        selectAllCheckboxes.forEach(checkbox => {
+            checkbox.checked = false;
+            checkbox.indeterminate = false;
         });
 
         // Обновляем placeholder'ы в выпадающих списках
@@ -316,17 +343,37 @@
             const header = dropdown.querySelector('.checkbox-dropdown-header');
             const placeholder = dropdown.querySelector('.checkbox-dropdown-placeholder');
             const checkboxesInDropdown = dropdown.querySelectorAll('input[type="checkbox"]');
+            const selectAllCheckbox = dropdown.querySelector('.select-all-checkbox');
+            const regularCheckboxes = dropdown.querySelectorAll('input[type="checkbox"]:not(.select-all-checkbox)');
             const defaultPlaceholder = placeholder.textContent;
 
-            // Функция обновления текста заголовка
+            // Функция обновления текста заголовка (только для обычных чекбоксов)
             function updatePlaceholder() {
-                const checked = Array.from(checkboxesInDropdown).filter(cb => cb.checked);
+                const checked = Array.from(regularCheckboxes).filter(cb => cb.checked);
 
                 if (checked.length === 0) {
                     placeholder.textContent = defaultPlaceholder;
                 } else {
                     placeholder.textContent = checked.map(cb => cb.value).join(', ');
                 }
+            }
+
+            // Функция синхронизации "Выбрать все" с остальными чекбоксами
+            function updateSelectAllCheckbox() {
+                const checkedCount = Array.from(regularCheckboxes).filter(cb => cb.checked).length;
+                selectAllCheckbox.checked = checkedCount === regularCheckboxes.length && regularCheckboxes.length > 0;
+                selectAllCheckbox.indeterminate = checkedCount > 0 && checkedCount < regularCheckboxes.length;
+            }
+
+            // Обработчик для чекбокса "Выбрать все"
+            if (selectAllCheckbox) {
+                selectAllCheckbox.addEventListener('change', (e) => {
+                    regularCheckboxes.forEach(checkbox => {
+                        checkbox.checked = e.target.checked;
+                    });
+                    updatePlaceholder();
+                    updateURL();
+                });
             }
 
             // Клик по заголовку - открыть/закрыть список
@@ -345,12 +392,16 @@
             });
 
             // Обновляем текст при изменении чекбоксов
-            checkboxesInDropdown.forEach(checkbox => {
-                checkbox.addEventListener('change', updatePlaceholder);
+            regularCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', () => {
+                    updatePlaceholder();
+                    updateSelectAllCheckbox();
+                });
             });
 
             // Инициализируем текст при загрузке
             updatePlaceholder();
+            updateSelectAllCheckbox();
         });
 
         // Закрываем выпадающие списки при клике вне их
