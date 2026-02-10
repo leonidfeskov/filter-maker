@@ -97,6 +97,10 @@ input[type="text"]:focus {
 .checkbox-dropdown-placeholder {
     font-size: 14px;
     color: #666;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1;
 }
 
 .checkbox-dropdown.active .checkbox-dropdown-placeholder {
@@ -143,6 +147,7 @@ input[type="text"]:focus {
 
 .checkbox-dropdown-list .checkbox-item:hover {
     background: #f5f5f5;
+    cursor: pointer;
 }
 
 .checkbox-dropdown-list .select-all-item {

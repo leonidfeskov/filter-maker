@@ -374,6 +374,16 @@
                     updatePlaceholder();
                     updateURL();
                 });
+
+                // Добавляем обработчик клика на весь select-all-item
+                const selectAllItem = dropdown.querySelector('.select-all-item');
+                selectAllItem.addEventListener('click', (e) => {
+                    // Не переключаем, если клик был на самом чекбоксе или на label
+                    if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'LABEL') {
+                        selectAllCheckbox.checked = !selectAllCheckbox.checked;
+                        selectAllCheckbox.dispatchEvent(new Event('change', { bubbles: true }));
+                    }
+                });
             }
 
             // Клик по заголовку - открыть/закрыть список
@@ -396,6 +406,18 @@
                 checkbox.addEventListener('change', () => {
                     updatePlaceholder();
                     updateSelectAllCheckbox();
+                });
+            });
+
+            // Добавляем обработчик клика на весь checkbox-item
+            dropdown.querySelectorAll('.checkbox-item:not(.select-all-item)').forEach(item => {
+                item.addEventListener('click', (e) => {
+                    // Не переключаем, если клик был на самом чекбоксе или на label
+                    if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'LABEL') {
+                        const checkbox = item.querySelector('input[type="checkbox"]');
+                        checkbox.checked = !checkbox.checked;
+                        checkbox.dispatchEvent(new Event('change', { bubbles: true }));
+                    }
                 });
             });
 
